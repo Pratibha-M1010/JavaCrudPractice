@@ -1,0 +1,14 @@
+# Copy Paste Properties File Given
+#Tomcat server port number 8080
+#server.port=7070
+#context path default value : empty
+#server.servlet.context-path=/day9_boot
+#DB properties
+spring.datasource.url=jdbc:mysql://localhost:3307/javaendmodule?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=root123
+# JPA properties
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.open-in-view=false
+debug=true

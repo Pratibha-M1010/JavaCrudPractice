@@ -1,0 +1,9 @@
+package com.app.service;
+
+import com.app.dto.CredentialsDto;
+import com.app.entities.Employee;
+
+public interface EmployeeService {
+	public Employee addEmployeeDetails(Employee emp);
+	public Employee getEmployeeDetails(CredentialsDto emp);
+}

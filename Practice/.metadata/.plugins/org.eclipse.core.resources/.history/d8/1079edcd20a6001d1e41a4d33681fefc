@@ -1,0 +1,27 @@
+package com.app.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dto.CredentialsDto;
+import com.app.entities.Employee;
+import com.app.repository.EmployeeRepository;
+
+@Service
+@Transactional
+public class EmployeeServiceImpl implements EmployeeService {
+	@Autowired
+	private EmployeeRepository empRepo;
+	
+	public Employee addEmployeeDetails(Employee emp) {
+		return empRepo.save(emp);
+	}
+
+	@Override
+	public Employee getEmployeeDetails(CredentialsDto cred) {
+		// TODO Auto-generated method stub
+		return empRepo.findByEmailAndPassword(cred.getEmail(), cred.getPassword());
+	}
+}

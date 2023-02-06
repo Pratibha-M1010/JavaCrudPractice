@@ -1,0 +1,33 @@
+package com.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.dto.CredentialsDto;
+import com.app.entities.Employee;
+import com.app.service.EmployeeService;
+
+@RestController
+@RequestMapping("/employees")
+public class EmployeeController {
+//	If the methods are not working in Swagger Try PostMan 
+	
+	@Autowired
+	private EmployeeService empService;
+
+	@PostMapping("/add")
+	public Employee addEmployeeDetails(@RequestBody Employee emp) {
+		return empService.addEmployeeDetails(emp);
+	}
+	
+	@GetMapping("/getemployee")
+	public Employee getEmployeeDetais(@RequestParam String email,@RequestParam String password) {
+		System.out.println(email,password);
+		return empService.getEmployeeDetails(cred);
+	}
+}
